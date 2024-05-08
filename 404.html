@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET PO GUIDE YOU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header>
+
+        <div class="container header-container">
+
+            <div class="leftHeader">
+                <a href="">
+                    <img src="img/footer-ig.png" alt="instagram">
+                </a>
+            </div>
+
+            <div class="midHeader">
+                <img style="height: 35px;" src="img/header-logo.png" alt="logo">
+            </div>
+
+            <div class="rightHeader">
+
+                <div>RESERVE THE SPOT</div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <section id="four">
+
+        <img src="img/movable1.png" alt="movable" class="mov1">
+        <img src="img/movable2.png" alt="movable" class="mov2">
+
+        <div>
+            <img src="img/404.png" alt="404">
+        </div>
+
+        <div>
+            <h1>404</h1>
+        </div>
+
+        <div class="tx">
+            <div>
+                Mistakes happen, but so do new discoveries. While you're here,
+                why not explore some of our other pages and uncover
+                THE SECRETS AT HOUSE OF PO?
+            </div>
+            <div>
+                Mistakes happen, but so do new discoveries. While you're here,
+                why not explore some of our other pages and uncover
+                THE SECRETS AT HOUSE OF PO?
+            </div>
+        </div>
+
+        <a href="index.html">TAKE ME BACK</a>
+
+    </section>
+
+    <section id="contact">
+
+        <div class="container contact-container">
+
+            <div class="leftContact">
+
+                <div>
+                    <div class="headline-div">
+                        <h3>SINCE YOUR HERE FOLLOW US!</h3>
+                    </div>
+                    <div class="tx">
+                        <div>
+                            MEET Young Po ONLINE ON THE INTERWEBS AND SEE WHATS UP!
+                        </div>
+                        <div>
+                            MEET Young Po ONLINE ON THE INTERWEBS AND SEE WHATS UP!
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="headline-div">
+                        <h3>CONTACT</h3>
+                    </div>
+                    <a target="_blank" href="https://wa.me/+96598519258">
+                        <div class="tx">
+                            <div>
+                                +965 98519258
+                            </div>
+                            <div>
+                                +965 98519258
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="rightContact">
+
+                <img src="img/contact-abs.png" alt="contact-abs" class="contact-abs">
+
+                <div class="headline-div">
+                    <h3>FIND US HERE</h3>
+                </div>
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3478.0603519852893!2d47.933772!3d29.339226999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDIwJzIxLjIiTiA0N8KwNTYnMDEuNiJF!5e0!3m2!1sen!2smk!4v1713470689952!5m2!1sen!2smk"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="fast"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="container footer-container">
+
+            <div class="footerTop">
+
+                <div class="footerLeft">
+                    Ⓒ 2024 VENTRIGROUP | CREATED WITH INSPO ADVERSTING AND MARKETING COMPANY
+                </div>
+
+                <div class="rightFooter">
+                    <a href="">
+                        <img src="img/instagram.svg" alt="">
+                    </a>
+
+                    <a href="">
+                        <img src="img/twitter.svg" alt="">
+                    </a>
+
+                    <a href="">
+                        <img src="img/tiktok.svg" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+            <div></div>
+
+            <div class="footerBottom">
+
+                <a href="">Privacy / Legal</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        const mov1 = document.querySelector(".mov1")
+        const mov2 = document.querySelector(".mov2")
+
+
+        let m1 = false
+        let m2 = false
+
+        document.addEventListener("mousedown", (e) => {
+            if (e.target == mov1) {
+                m1 = true
+            }
+            else if (e.target == mov2) {
+                m2 = true
+            }
+        })
+
+        document.addEventListener("mouseup", (e) => {
+            m1 = false
+            m2 = false
+        })
+
+        document.addEventListener("mousemove", (e) => {
+            if (m1) {
+                mov1.style.left = `${e.clientX}px`
+                mov1.style.top = `${e.clientY}px`
+            }
+            if (m2) {
+                mov2.style.left = `${e.clientX}px`
+                mov2.style.top = `${e.clientY}px`
+            }
+        })
+
+        setTimeout(() => {
+            document.querySelector("#four h1").style.transform = "none"
+            document.querySelector("#four div img").style.transform = "none"
+        }, 100)
+
+
+
+
+        const texts = document.querySelectorAll(".tx>div:nth-child(2)")
+        let textContents = []
+        let textIndex = []
+        let dones = [false, false, false, false, false, false]
+
+        texts.forEach((text, i) => {
+            textContents.push(text.innerText.split(" "))
+            textIndex.push(0)
+            text.innerHTML = ""
+            for (let id = 0; id < textContents[i].length; id++) {
+                text.innerHTML += `<span><span>${textContents[i][id]}</span><span>${textContents[i][id]}</span></span>`
+                // console.log(textContents[idx][textIndex[idx]])
+                text.innerHTML += " "
+            }
+
+        })
+
+        texts.forEach((text, id)=>{
+            appearText(id, true)
+        })
+
+        const headlines = document.querySelectorAll(".headline-div")
+
+        function headlineThing(parent) {
+            const childs = parent.querySelectorAll("*")
+
+            childs.forEach(child => {
+                child.style.transform = "none"
+                child.style.opacity = "1"
+            })
+
+        }
+
+        headlines.forEach((text, id)=>{
+            headlineThing(text)
+        })
+
+        function appropriateNavigation(idx) {
+            navs.forEach(nav => nav.classList.remove("current-navigation"))
+            navs[idx].classList.add("current-navigation")
+        }
+
+
+
+
+        function appearText(idx, boo, booboo) {
+            if (dones[idx] && !booboo) {
+                return
+            }
+            dones[idx] = true
+            setTimeout(() => {
+                // texts[idx].innerHTML+=`<span>${textContents[idx][textIndex[idx]]}</span>`
+                // // console.log(textContents[idx][textIndex[idx]])
+                // texts[idx].innerHTML+=" "
+                texts[idx].querySelectorAll("span>span:nth-child(2)")[textIndex[idx]].style.transform = "none"
+                texts[idx].querySelectorAll("span>span:nth-child(2)")[textIndex[idx]].style.opacity = "1"
+
+                textIndex[idx]++
+                if (textIndex[idx] < textContents[idx].length) {
+                    appearText(idx, boo, true)
+                }
+                else {
+                    if (idx == 0) {
+                        document.querySelector(".rightHero>div>div:nth-child(2)").style.opacity = "1"
+                    }
+                    if (idx == 2) {
+                        document.querySelector(".rightD button").style.opacity = "1"
+                    }
+                    if (idx == 3) {
+                        document.querySelector(".menuRight>a").style.opacity = "1"
+                    }
+                    if (idx == 4) {
+                        document.querySelector(".rightHouse button").style.opacity = "1"
+                    }
+
+                    if (boo) {
+                        appearText(idx + 1, boos[idx + 1])
+                    }
+                }
+            }, 50)
+        }
+
+
+    </script>
+
+</body>
+
+</html>
